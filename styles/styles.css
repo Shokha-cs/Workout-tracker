@@ -22,3 +22,8 @@ nav a{
     text-transform: uppercase;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+nav a:hover{
+    color: red;
+}
+
