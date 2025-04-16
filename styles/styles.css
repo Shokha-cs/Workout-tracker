@@ -1,26 +1,28 @@
 body{
 margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Typography styles, same for every page */
 h1{
-
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h2{
-
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h3{
-
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 26px;
 }
 
 h4{
-
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
  p{
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 
 nav{
@@ -59,19 +61,12 @@ a.secundair {
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-<<<<<<< HEAD
-    
-
-
-}
-=======
     /* Primair button (Red) */
     a.primair {
         background-color: #e53935;
         /* Red */
         color: white;
     }
->>>>>>> c81514312a20c9e6d047033b76843475dcc75a64
 
     a.primair:hover {
         background-color: #c62828;
