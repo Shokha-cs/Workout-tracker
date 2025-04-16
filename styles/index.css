@@ -1,0 +1,13 @@
+#header_home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#header_home img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  filter: brightness(60%);
+}
