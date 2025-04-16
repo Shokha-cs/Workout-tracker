@@ -5,9 +5,27 @@
   overflow: hidden;
 }
 #header_home img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 90vh;
+  height: 100%;
   object-fit: cover;
   filter: brightness(60%);
+  z-index: 1;
+}
+#header_home h1,
+#buttons {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+#header_home h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 20vh;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
 }
