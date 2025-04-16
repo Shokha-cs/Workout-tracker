@@ -1,5 +1,6 @@
 body{
 margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Typography styles, same for every page */
@@ -13,6 +14,7 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 h3{
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 26px;
 }
 
 h4{
