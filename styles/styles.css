@@ -1,84 +1,89 @@
-body{
-margin: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Typography styles, same for every page */
-h1{
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-h2{
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-h3{
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 26px;
+h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 26px;
 }
 
-h4{
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+h4 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
- p{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- }
-
-nav{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    background-color: black;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 15px 0;
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-nav a{
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
 }
 
-nav a:hover{
-    color: red;
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav a:hover {
+  color: red;
 }
 
 a.primair,
 a.secundair {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 8px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    /* Primair button (Red) */
-    a.primair {
-        background-color: #e53935;
-        /* Red */
-        color: white;
-    }
+a.primair {
+  background-color: #e53935;
+  color: white;
+}
 
-    a.primair:hover {
-        background-color: #c62828;
-    }
+a.primair:hover {
+  background-color: #c62828;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px #e53935;
+}
 
-    /* Secundair button (Black) */
-    a.secundair {
-        background-color: #000000;
-        color: white;
-        border: 2px solid #333;
-    }
+a.secundair {
+  background-color: #000000;
+  color: white;
+  border: 2px solid #333;
+}
 
-    a.secundair:hover {
-        background-color: #1a1a1a;
-    }
+a.secundair:hover {
+  background-color: #1a1a1a;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px black;
+}
