@@ -40,19 +40,16 @@
   line-height: 1.7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 #About\ website h2 {
   font-size: 2em;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 20px;
   text-align: center;
 }
-
 #About\ website p {
   font-size: 1.05em;
   white-space: pre-line;
 }
-
 #About\ website p::first-line {
   font-weight: 600;
 }
