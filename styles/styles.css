@@ -90,9 +90,9 @@ a.secundair:hover {
 
 
 footer {
-  padding: 2rem 1rem;
+  padding: 10px 15px;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 20px;
   margin: 0;
 }
 
@@ -100,7 +100,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .footer-logo {

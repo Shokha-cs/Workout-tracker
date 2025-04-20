@@ -36,7 +36,7 @@
   max-width: 800px;
   margin: 40px auto;
   font-family: "Segoe UI", sans-serif;
-  line-height: 1.7;
+  line-height: 1.4em;
 }
 
 #box1 h2 {
@@ -46,7 +46,6 @@
 }
 
 #box1 p {
-  font-size: 1.05em;
   white-space: pre-line;
 }
 
@@ -58,27 +57,18 @@ blockquote {
   margin: 40px 0;
   padding: 20px;
   font-family: monospace;
+  font-size: 32px;
+  line-height: 2em;
 }
-
-
-#quote_section h3 {
-  text-align: center;
-  font-size: 24px;
-  color: black;
-  margin-bottom: 20px;
-}
-
 
 blockquote::before {
   content: "“";
-  font-size: 36px;
   vertical-align: top;
   color: red;
 }
 
 blockquote::after {
   content: "”";
-  font-size: 36px;
   vertical-align: bottom;
   color: red;
 }

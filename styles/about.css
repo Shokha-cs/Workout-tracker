@@ -25,10 +25,10 @@ header h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
-  gap: 2rem;
+  padding: 20px 10px;
+  gap: 20px;
   background-color: white;
-  margin: 1rem auto;
+  margin: 20px auto;
   border-radius: 12px;
   max-width: 1200px;
 }
@@ -52,7 +52,7 @@ header h1 {
   padding: 3rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 20px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -69,19 +69,12 @@ header h1 {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 .contact {
-  margin-top: 1rem;
   font-size: 14px;
 }
-
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
 @media screen and (max-width: 768px) {
   .container_about_page {
     flex-direction: column;
