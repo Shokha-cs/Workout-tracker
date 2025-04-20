@@ -6,6 +6,7 @@ body {
 /* Typography styles, same for every page */
 h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 48px;
 }
 
 h2 {
