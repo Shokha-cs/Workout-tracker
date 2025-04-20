@@ -40,8 +40,8 @@
           <input type="number" id="weight" name="weight" required />
           <br />
 
-          <label for="length">Length (cm):</label>
-          <input type="number" id="length" name="length" step="10" required />
+          <label for="length">Height (cm):</label>
+          <input type="number" id="length" name="length" step="1" required />
           <br />
 
           <label for="goal">Goal:</label>
@@ -81,32 +81,6 @@
             const goal = document.getElementById("goal").value;
             const workouts = document.getElementById("workouts").value;
 
-<<<<<<< HEAD
-    <script>
-      document
-        .getElementById("info-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault(); 
-
-        
-          const gender = document.getElementById("Gender").value;
-          const age = document.getElementById("age").value;
-          const weight = document.getElementById("weight").value;
-          const height = document.getElementById("length").value;
-          const goal = document.getElementById("goal").value;
-          const workouts = document.getElementById("workouts").value;
-
-         
-          document.getElementById("result").innerHTML = `
-           Gender: ${gender} <br>
-           Age: ${age} <br>
-           Weight:${weight} kg <br>
-           Height:${height} cm <br>
-           Goal:${
-             goal === "lose" ? "Lose weight" : "Gain muscle"
-           } <br>
-           Workouts per week:${workouts}
-=======
             document.getElementById("result").innerHTML = `
           Gender:${gender} <br>
            Age:${age} <br>
@@ -114,7 +88,6 @@
            Height: ${height} cm <br>
            Goal: ${goal === "lose" ? "Lose weight" : "Gain muscle"} <br>
          Workouts per week: ${workouts}
->>>>>>> db7a508c563e034d81e92980d3d3819db19191b7
         `;
           });
       </script>
