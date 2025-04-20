@@ -86,12 +86,3 @@ a.secundair:hover {
   background-color: #1a1a1a;
   box-shadow: 0 4px 12px black;
 }
-footer {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
