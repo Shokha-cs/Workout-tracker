@@ -19,7 +19,7 @@ header h1 {
   font-size: 2.5rem;
 }
 
-/* Container Styling */
+
 .container_about_page {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +47,6 @@ header h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Team Section */
 #group {
   padding: 3rem 1rem;
   display: grid;
