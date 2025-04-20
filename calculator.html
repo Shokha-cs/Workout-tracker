@@ -81,7 +81,8 @@
             const goal = document.getElementById("goal").value;
             const workouts = document.getElementById("workouts").value;
 
-            let x = Number(age) + Number(weight) + Number(height) + (workouts * 10);
+            let x =
+              Number(age) + Number(weight) + Number(height) + workouts * 10;
 
             document.getElementById("result").innerHTML = `
           Gender:${gender} <br>
