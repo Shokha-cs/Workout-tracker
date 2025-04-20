@@ -33,8 +33,7 @@
 #workout_plan {
   max-width: 600px;
   margin: 2rem auto 0 auto;
-  backdrop-filter: blur(10px);
-  color: white;
+  color: black;
   padding: 1.5rem;
   border-radius: 1rem;
   z-index: 2;
