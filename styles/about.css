@@ -51,7 +51,7 @@ header h1 {
 #group {
   padding: 3rem 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto; 
@@ -73,6 +73,7 @@ header h1 {
 }
 .contact {
   margin-top: 1rem;
+  font-size: 14px;
 }
 
 
