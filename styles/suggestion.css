@@ -13,12 +13,6 @@ body {
     color: #333;
   }
   
-
-  
-  nav a:hover {
-    color: red;
-
-  }
   
   header {
     background-color: red;
@@ -56,8 +50,8 @@ body {
   }
   
   .icon-block img {
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    max-width: auto;
     border-radius: 10px;
     margin-bottom: 15px;
   }
