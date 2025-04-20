@@ -37,6 +37,7 @@
   margin: 40px auto;
   font-family: "Segoe UI", sans-serif;
   line-height: 1.4em;
+  text-align: center;
 }
 
 #box1 h2 {
@@ -44,11 +45,6 @@
   margin-bottom: 20px;
   text-align: center;
 }
-
-#box1 p {
-  white-space: pre-line;
-}
-
 #box1 p::first-line {
   font-weight: 600;
 }
