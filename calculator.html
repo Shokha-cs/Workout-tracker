@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calorie Calculator| Momentum</title>
-      <link rel="stylesheet" href="styles/calculator.css">
-      <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/calculator.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <nav>
@@ -14,82 +14,87 @@
       <a href="about.html">About us</a>
       <a href="suggestion.html">Suggestions</a>
     </nav>
-<header>
-    <h3>Calorie calculator</h3>
-    <p>The Calorie Calculator helps estimate the daily calorie intake a person needs. It also offers basic guidelines for
-    weight loss or weight gain.</p>
-
-  </header>
+    <header>
+      <h3>Calorie calculator</h3>
+      <p>
+        The Calorie Calculator helps estimate the daily calorie intake a person
+        needs. It also offers basic guidelines for weight loss or weight gain.
+      </p>
+    </header>
     <section class="form-container">
       <div class="form-card">
-       <form id="info-form">
+        <form id="info-form">
           <label for="Gender">Gender:</label>
           <select id="Gender" name="Gender" required>
-              <option >Male</option>
-              <option >Female</option>
+            <option>Male</option>
+            <option>Female</option>
           </select>
-        <br>
-    
-        <label for="age">International age:</label>
-        <input type="number" id="age" name="age" required>
-        <br>
+          <br />
 
-        <label for="weight">Weight (kg):</label>
-        <input type="number" id="weight" name="weight" required>
-        <br>
+          <label for="age">International age:</label>
+          <input type="number" id="age" name="age" required />
+          <br />
 
-        <label for="length">Length (cm):</label>
-        <input type="number" id="length" name="length" step="10" required>
-        <br>
+          <label for="weight">Weight (kg):</label>
+          <input type="number" id="weight" name="weight" required />
+          <br />
 
-        <label for="goal">Goal:</label>
-        <select id="goal" name="goal" required>
+          <label for="length">Length (cm):</label>
+          <input type="number" id="length" name="length" step="10" required />
+          <br />
+
+          <label for="goal">Goal:</label>
+          <select id="goal" name="goal" required>
             <option value="lose">Lose weight</option>
             <option value="gain_muscle">Gain muscle</option>
+          </select>
+          <br />
 
-        </select>
-        <br>
+          <label for="workouts">Workouts per week:</label>
+          <input
+            type="number"
+            id="workouts"
+            name="workouts"
+            min="0"
+            max="10"
+            required
+          />
+          <br />
 
-        <label for="workouts">Workouts per week:</label>
-        <input type="number" id="workouts" name="workouts" min="0" max="10" required>
-        <br>
+          <br /><br />
+          <button class="submit" type="submit">Calculate Calories</button>
+        </form>
+      </div>
+    </section>
 
-        <br><br>
-        <button class="submit" type="submit">Calculate Calories</button>
-    </form>
-
-     </div>
-      </section>
-    
     <h4 id="result"></h4>
-  
+
     <script>
-      document.getElementById("info-form").addEventListener("submit", function(e) {
-        e.preventDefault(); // stop the page from reloading
-      
-        // Get values from inputs
-        const gender = document.getElementById("Gender").value;
-        const age = document.getElementById("age").value;
-        const weight = document.getElementById("weight").value;
-        const height = document.getElementById("length").value;
-        const goal = document.getElementById("goal").value;
-        const workouts = document.getElementById("workouts").value;
-      
-        // Show the values below the form
-        document.getElementById("result").innerHTML = `
-          🧍 <strong>Gender:</strong> ${gender} <br>
-          🎂 <strong>Age:</strong> ${age} <br>
-          ⚖️ <strong>Weight:</strong> ${weight} kg <br>
-          📏 <strong>Height:</strong> ${height} cm <br>
-          🎯 <strong>Goal:</strong> ${goal === "lose" ? "Lose weight" : "Gain muscle"} <br>
-          💪 <strong>Workouts per week:</strong> ${workouts}
+      document
+        .getElementById("info-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // stop the page from reloading
+
+          // Get values from inputs
+          const gender = document.getElementById("Gender").value;
+          const age = document.getElementById("age").value;
+          const weight = document.getElementById("weight").value;
+          const height = document.getElementById("length").value;
+          const goal = document.getElementById("goal").value;
+          const workouts = document.getElementById("workouts").value;
+
+          // Show the values below the form
+          document.getElementById("result").innerHTML = `
+           <strong>Gender:</strong> ${gender} <br>
+           <strong>Age:</strong> ${age} <br>
+           <strong>Weight:</strong> ${weight} kg <br>
+           <strong>Height:</strong> ${height} cm <br>
+           <strong>Goal:</strong> ${
+             goal === "lose" ? "Lose weight" : "Gain muscle"
+           } <br>
+           <strong>Workouts per week:</strong> ${workouts}
         `;
-      });
-      </script>
-      
-
-    
-
-</body>
-
+        });
+    </script>
+  </body>
 </html>
