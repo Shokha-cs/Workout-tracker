@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -19,7 +19,7 @@ header h1 {
   font-size: 2.5rem;
 }
 
-/* Container Styling */
+
 .container_about_page {
   display: flex;
   flex-wrap: wrap;
