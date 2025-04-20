@@ -13,19 +13,7 @@ body {
     color: #333;
   }
   
-  nav {
-    background-color: #000000;
-    padding: 15px 0;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
+
   
   nav a:hover {
     color: red;
