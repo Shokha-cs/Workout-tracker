@@ -45,8 +45,4 @@ document.getElementById("info-form").addEventListener("submit", function(e) {
     Total calories: {x}
   `;
 });
-
-
-
-
->>>>>>> Stashed changes
+>>>>>>> 5cdda01d9208a3f10a703d63cb85f3084a66d30f
