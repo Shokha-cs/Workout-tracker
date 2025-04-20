@@ -19,7 +19,7 @@ header h1 {
   font-size: 2.5rem;
 }
 
-/* Container Styling */
+
 .container_about_page {
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +37,7 @@ header h1 {
   flex: 1 1 500px;
   padding: 1rem;
 }
+
 .Img {
   width: 100%;
   max-width: 500px;
@@ -47,20 +48,19 @@ header h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Team Section */
 #group {
   padding: 3rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1400px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
-#group > div {
+#group>div {
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
@@ -71,6 +71,7 @@ header h1 {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+
 .contact {
   margin-top: 1rem;
   font-size: 14px;

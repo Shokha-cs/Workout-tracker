@@ -1,99 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calorie Calculator| Momentum</title>
-    <link rel="stylesheet" href="styles/calculator.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
-  </head>
-  <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="calculator.html">Calculator</a>
-      <a href="about.html">About us</a>
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
-    <header>
-      <h2>Calorie calculator</h2>
-      <p>
-        The Calorie Calculator helps estimate the daily calorie intake a person
-        needs. It also offers basic guidelines for weight loss or weight gain.
-      </p>
-    </header>
-    <section class="form-container">
-      <div class="form-card">
-        <form id="info-form">
-          <label for="Gender">Gender:</label>
-          <select id="Gender" name="Gender" required>
-            <option>Male</option>
-            <option>Female</option>
-          </select>
-          <br />
 
-          <label for="age">International age:</label>
-          <input type="number" id="age" name="age" required />
-          <br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorie Calculator| Momentum</title>
+  <link rel="stylesheet" href="styles/calculator.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
+</head>
 
-          <label for="weight">Weight (kg):</label>
-          <input type="number" id="weight" name="weight" required />
-          <br />
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="about.html">About us</a>
+    <a href="suggestion.html">Suggestions</a>
+  </nav>
+  <header>
+    <h2>Calorie calculator</h2>
+    <p>
+      The Calorie Calculator helps estimate the daily calorie intake a person
+      needs. It also offers basic guidelines for weight loss or weight gain.
+    </p>
+  </header>
+  <section class="form-container">
+    <div class="form-card">
+      <form id="info-form">
+        <label for="Gender">Gender:</label>
+        <select id="Gender" name="Gender" required>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <br />
 
-          <label for="length">Height (cm):</label>
-          <input type="number" id="length" name="length" step="1" required />
-          <br />
+        <label for="age">International age:</label>
+        <input type="number" id="age" name="age" required />
+        <br />
 
-          <label for="goal">Goal:</label>
-          <select id="goal" name="goal" required>
-            <option value="lose">Lose weight</option>
-            <option value="gain_muscle">Gain muscle</option>
-          </select>
-          <br />
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required />
+        <br />
 
-          <label for="workouts">Workouts per week:</label>
-          <input
-            type="number"
-            id="workouts"
-            name="workouts"
-            min="0"
-            max="10"
-            required
-          />
-          <br />
+        <label for="length">Length (cm):</label>
+        <input type="number" id="length" name="length" step="10" required />
+        <br />
 
-          <br /><br />
-          <button class="submit" type="submit">Calculate Calories</button>
-        </form>
-      </div>
-    </section>
+        <label for="goal">Goal:</label>
+        <select id="goal" name="goal" required>
+          <option value="lose">Lose weight</option>
+          <option value="gain_muscle">Gain muscle</option>
+        </select>
+        <br />
 
-    <h4 id="result">
-      <script>
-        document
-          .getElementById("info-form")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-            const gender = document.getElementById("Gender").value;
-            const age = document.getElementById("age").value;
-            const weight = document.getElementById("weight").value;
-            const height = document.getElementById("length").value;
-            const goal = document.getElementById("goal").value;
-            const workouts = document.getElementById("workouts").value;
+        <label for="workouts">Workouts per week:</label>
+        <input type="number" id="workouts" name="workouts" min="0" max="10" required />
+        <br />
 
-            document.getElementById("result").innerHTML = `
+        <br /><br />
+        <button class="submit" type="submit">Calculate Calories</button>
+      </form>
+    </div>
+  </section>
+
+  <h4 id="result">
+    <script>
+      document
+        .getElementById("info-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const gender = document.getElementById("Gender").value;
+          const age = document.getElementById("age").value;
+          const weight = document.getElementById("weight").value;
+          const height = document.getElementById("length").value;
+          const goal = document.getElementById("goal").value;
+          const workouts = document.getElementById("workouts").value;
+
+          let x =
+            Number(age) + Number(weight) + Number(height) + workouts * 10;
+
+          document.getElementById("result").innerHTML = `
           Gender:${gender} <br>
            Age:${age} <br>
           Weight: ${weight} kg <br>
            Height: ${height} cm <br>
            Goal: ${goal === "lose" ? "Lose weight" : "Gain muscle"} <br>
-         Workouts per week: ${workouts}
+         Workouts per week: ${workouts} </br>
+         Total daily calories: ${x * 8}
         `;
-          });
-      </script>
-    </h4>
-    <footer>
-      <p>&copy; 2025 Uzduty</p>
+        });
+    </script>
+  </h4>
+  <footer>
+    <div class="footer-content">
+      <img src="images/favicon.jpg" alt="Momentum logo" class="footer-logo" />
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="about.html">About us</a>
+        <a href="suggestion.html">Suggestions</a>
+      </nav>
+    </div>
+    <p>&copy; 2025 Momentum. All rights reserved.</p>
   </footer>
-  </body>
+</body>
+
 </html>

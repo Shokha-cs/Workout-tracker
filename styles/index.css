@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-#header_home h3{
+#header_home h3 {
   color: white;
 }
 
@@ -21,6 +21,7 @@
   background-repeat: initial;
   z-index: -1;
 }
+
 #header_home h1,
 #buttons {
   position: relative;
@@ -29,66 +30,56 @@
   text-align: center;
 }
 
-#About\ website {
-  background-color: #f5f5f5;
+#box1 {
   padding: 40px 20px;
   border-radius: 12px;
   max-width: 800px;
   margin: 40px auto;
   font-family: "Segoe UI", sans-serif;
-  color: #333;
   line-height: 1.7;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-#About\ website h2 {
+
+#box1 h2 {
   font-size: 2em;
   color: #000000;
   margin-bottom: 20px;
   text-align: center;
 }
-#About\ website p {
+
+#box1 p {
   font-size: 1.05em;
   white-space: pre-line;
 }
-#About\ website p::first-line {
+
+#box1 p::first-line {
   font-weight: 600;
 }
 
-
-#header_home h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-top: 20vh;
-  margin-bottom: 1.5rem;
-  padding: 0 1rem;
+blockquote {
+  margin: 40px 0;
+  padding: 20px;
+  font-family: monospace;
 }
-#workout_planab {
-  max-width: 600px;
-  margin: 2rem auto 0 auto;
+
+
+#quote_section h3 {
+  text-align: center;
+  font-size: 24px;
   color: black;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  z-index: 2;
-  position: relative;
-  font-size: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
 }
 
-#workout_plan h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+
+blockquote::before {
+  content: "“";
+  font-size: 36px;
+  vertical-align: top;
+  color: red;
 }
 
-#workout_plan p {
-  font-weight: bold;
-  margin: 1rem 0 0.5rem;
-}
-#workout_plan ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#workout_plan li {
-  margin-bottom: 0.5rem;
+blockquote::after {
+  content: "”";
+  font-size: 36px;
+  vertical-align: bottom;
+  color: red;
 }

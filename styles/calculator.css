@@ -3,12 +3,13 @@ header {
   color: white;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 h3 {
   text-align: center;
 }
-p {
+
+.form-container p {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -47,6 +48,7 @@ label {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 select {
   width: 100%;
   padding: 0.5rem;
@@ -57,6 +59,7 @@ select {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
 input {
   width: 100%;
   padding: 0.5rem;
@@ -67,6 +70,7 @@ input {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
 .submit {
   background-color: #fcfafa;
   color: rgb(10, 9, 9);
@@ -77,9 +81,11 @@ input {
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .submit:hover {
   background-color: #eb1212;
 }
+
 #result {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
