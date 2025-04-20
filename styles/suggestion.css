@@ -15,13 +15,11 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
   letter-spacing: 1px;
 }
 
 header p {
   margin-top: 10px;
-  font-size: 1.2rem;
 }
 
 .grid-layout {
