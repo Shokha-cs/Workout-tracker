@@ -29,7 +29,7 @@ h3 {
 }
 
 .form-card {
-  background-color: #111;
+  background-color: black;
   border-radius: 15px;
   padding: 5vw;
   position: relative;
@@ -54,7 +54,7 @@ select {
   border-radius: 5px;
   border: 1px solid #444;
   background-color: black;
-  color: #fff;
+  color: white;
   font-size: 18px;
   margin-bottom: 1rem;
 }
@@ -65,12 +65,12 @@ input {
   font-size: 18px;
   border-radius: 5px;
   border: 1px solid #444;
-  background-color: #222;
-  color: #fff;
+  background-color: black
+  color: white;
 }
 
 .submit {
-  background-color: #fcfafa;
+  background-color: white;
   color: rgb(10, 9, 9);
   padding: 0.5rem 1rem;
   border: none;
@@ -81,7 +81,7 @@ input {
 }
 
 .submit:hover {
-  background-color: #eb1212;
+  background-color: red;
 }
 
 #result {
