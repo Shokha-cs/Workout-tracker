@@ -1,0 +1,26 @@
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+"scripts": {
+  "start:backend": "node backend/index.js",
+  "start:frontend": "npm start --prefix frontend",
+  "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shokha-cs/Workout-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shokha-cs/Workout-tracker/issues"
+  },
+  "homepage": "https://github.com/Shokha-cs/Workout-tracker#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
