@@ -1,3 +1,27 @@
+/* === Root Variables === */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --link-color: red;
+  --nav-bg: black;
+  --footer-bg: #f1f1f1;
+  --button-primary: #e53935;
+  --button-primary-hover: #c62828;
+  --button-secondary-bg: #000;
+  --button-secondary-hover: #1a1a1a;
+  --shadow-primary: 0 4px 12px #e53935;
+  --shadow-secondary: 0 4px 12px black;
+}
+
+.darkmode {
+  --bg-color: #111;
+  --text-color: white;
+  --link-color: #ff4747;
+  --nav-bg: #000;
+  --footer-bg: #222;
+}
+
+/* === Global Reset === */
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +31,12 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overflow-x: hidden;
 }
 
+/* === Header === */
 header {
   background: linear-gradient(135deg, #d30000, #c91313);
   padding: 3rem 1rem;
@@ -32,6 +57,125 @@ header p {
   margin-top: 10px;
 }
 
+/* === Theme Switcher === */
+#theme-switch {
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--button-secondary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 3px;
+  right: 20px;
+}
+
+#theme-switch svg {
+  fill: var(--button-primary);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+/* === Typography === */
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 34px;
+}
+
+h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 26px;
+}
+
+h4 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* === Navigation === */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav a:hover {
+  color: var(--link-color);
+}
+
+/* === Buttons === */
+a.primair,
+a.secundair {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.primair {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+a.primair:hover {
+  background-color: var(--button-primary-hover);
+  box-shadow: var(--shadow-primary);
+}
+
+a.secundair {
+  background-color: var(--button-secondary-bg);
+  color: white;
+  border: 2px solid #333;
+}
+
+a.secundair:hover {
+  background-color: var(--button-secondary-hover);
+  box-shadow: var(--shadow-secondary);
+}
+
+/* === About Page Container === */
 .container_about_page {
   display: flex;
   flex-wrap: wrap;
@@ -39,7 +183,7 @@ header p {
   align-items: center;
   padding: 40px 20px;
   gap: 50px;
-  background: white;
+  background-color: var(--bg-color);
   margin: 60px auto;
   border-radius: 18px;
   max-width: 1200px;
@@ -48,7 +192,6 @@ header p {
   z-index: 1;
 }
 
-/* Text Section */
 .story-box {
   flex: 1 1 500px;
   padding: 1rem;
@@ -65,7 +208,7 @@ header p {
   font-size: 1.1rem;
 }
 
-/* Parallax Image */
+/* === Parallax Image === */
 .Img {
   width: 100%;
   max-width: 500px;
@@ -82,7 +225,7 @@ header p {
   transform: perspective(1000px) rotateY(4deg) scale(1.05);
 }
 
-/* Team Grid */
+/* === Team Grid === */
 #group {
   padding: 70px 20px;
   display: grid;
@@ -94,7 +237,6 @@ header p {
   z-index: 2;
 }
 
-/* Glass Card */
 #group > div {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.3);
@@ -106,9 +248,19 @@ header p {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.darkmode #group > div {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.05);
+}
+
 #group > div:hover {
   transform: scale(1.05) translateY(-10px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.darkmode #group > div:hover {
+  box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
 }
 
 #group img {
@@ -124,11 +276,16 @@ header p {
   transform: scale(1.08);
 }
 
+/* === Contact Section === */
 .contact {
   font-size: 14px;
   text-align: center;
   margin-top: 10px;
   color: #444;
+}
+
+.darkmode .contact {
+  color: #ccc;
 }
 
 .contact a {
@@ -141,7 +298,42 @@ header p {
   color: #8e1b28;
 }
 
-/* Media Queries */
+/* === Footer === */
+footer {
+  padding: 10px 15px;
+  text-align: center;
+  background-color: var(--footer-bg);
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* === Responsive === */
 @media screen and (max-width: 768px) {
   .container_about_page {
     flex-direction: column;

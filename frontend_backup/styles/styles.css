@@ -1,3 +1,55 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --link-color: red;
+  --nav-bg: black;
+  --footer-bg: #f1f1f1;
+  --button-primary: #e53935;
+  --button-primary-hover: #c62828;
+  --button-secondary-bg: #000;
+  --button-secondary-hover: #1a1a1a;
+  --shadow-primary: 0 4px 12px #e53935;
+  --shadow-secondary: 0 4px 12px black;
+}
+
+.darkmode {
+  --bg-color: #111;
+  --text-color: white;
+  --link-color: #ff4747;
+  --nav-bg: #000;
+  --footer-bg: #222;
+}
+
+#theme-switch{
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 3px;
+  right: 20px;
+}
+
+#theme-switch svg{
+  fill: var(--button-primary);
+}
+
+#theme-switch svg:last-child{
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+  display: block;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
