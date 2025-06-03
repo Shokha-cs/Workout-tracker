@@ -1,89 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
 
 function App() {
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/hello")
+      .then((response) => {
+        setMessage(response.data.message);
+      })
+      .catch((error) => {
+        console.error("Error fetching from backend:", error);
+      });
+  }, []);
+
   return (
     <>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="about.html">About us</a>
-        <a href="suggestion.html">Suggestions</a>
+      <nav className="main-nav">
+        <a href="/">Home</a>
+        <a href="/calculator">Calculator</a>
+        <a href="/about">About us</a>
+        <a href="/suggestion">Suggestions</a>
       </nav>
 
       <section id="header_home">
-        <img src="images/homepage.jpg" alt="Fitness lifestyle" />
+        <img
+          src="/images/homepage.jpg"
+          alt="Fitness lifestyle"
+          className="header-image"
+        />
         <h1>MOMENTUM</h1>
-        <h3>Get your free diet plan & workout pan</h3>
-        <div id="buttons">
-          <a className="primair" href="about.html">
+        <h3>Get your free diet plan & workout plan</h3>
+        <div className="buttons">
+          <a className="primary-btn" href="/about">
             About us
           </a>
-          <a className="secundair" href="calculator.html">
-            Go to calculator
+          <a className="secondary-btn" href="/calculator">
+            Calculator
           </a>
         </div>
       </section>
 
+      <section className="backend-section">
+        <h2>Backend Message:</h2>
+        <p>{message}</p>
+      </section>
+
       <section id="box1">
         <h2>About website</h2>
-        <p>
-          Welcome to Momentum — your all-in-one destination for fitness,
-          nutrition, and motivation!
-          <br />
-          <br />
-          Our mission is simple: to help you build a healthier, stronger, and
-          more confident version of yourself. Whether you're just starting your
-          fitness journey or looking to level up your current routine, we’ve got
-          the tools and support you need.
-          <br />
-          <br />
-          <strong>Workout Plans</strong>
-          <br />
-          We offer beginner-friendly and goal-oriented workout routines that are
-          easy to follow and effective. From full-body strength training to
-          core-blasting cardio, there's something here for everyone.
-          <br />
-          <br />
-          <strong>Nutrition Tips & Diet Plans</strong>
-          <br />
-          Fuel your body the right way. Explore daily tips and weekly meal
-          guides that support your goals, whether it's fat loss, muscle gain, or
-          simply staying healthy.
-          <br />
-          <br />
-          <strong>Fitness Calculators</strong>
-          <br />
-          Take the guesswork out of your progress! Use our built-in calculators
-          to estimate your ideal weight, calories, and BMI — and get
-          personalized insights to guide your journey.
-          <br />
-          <br />
-          Momentum is more than just a website — it's a growing community of
-          people who are choosing to take control of their health and wellness.
-          Start today, stay consistent, and let's move forward — together
-        </p>
+        <p>Welcome to Momentum</p>
 
         <section id="quote_section">
-          <blockquote>
-            The last three or four reps is what makes the muscle grow. This area
-            of pain divides a champion from someone who is not a champion.
-            <br />— Arnold Schwarzenegger
-          </blockquote>
+          <blockquote>Will be motivation here</blockquote>
         </section>
       </section>
 
       <footer>
         <div className="footer-content">
           <img
-            src="images/favicon.jpg"
-            alt="Momentum logo"
+            src="/images/favicon.jpg"
+            alt="Something"
             className="footer-logo"
           />
           <nav className="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="calculator.html">Calculator</a>
-            <a href="about.html">About us</a>
-            <a href="suggestion.html">Suggestions</a>
+            <a href="/">Home</a>
+            <a href="/calculator">Calculator</a>
+            <a href="/about">About us</a>
+            <a href="/suggestion">Suggestions</a>
           </nav>
         </div>
         <p>&copy; 2025 Momentum. All rights reserved.</p>
