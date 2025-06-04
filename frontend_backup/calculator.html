@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/calculator.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
@@ -68,34 +70,18 @@
         </form>
       </div>
     </section>
+    <section class="results-container" style="display:none; padding: 20px; border: 1px solid #ccc; margin-top: 20px;">
+  <h2>🔍 Your Fitness Plan</h2>
+  <p><strong>BMR:</strong> <span id="bmr-output"></span> kcal/day</p>
+  <p><strong>TDEE:</strong> <span id="tdee-output"></span> kcal/day</p>
+  <p><strong>Calorie Goal:</strong> <span id="goal-output"></span> kcal/day</p>
+  <h3>📆 Workout Plan</h3>
+  <ul id="workout-plan-list"></ul>
+</section>
+
 
     <h4 id="result">
-      <!-- <script>
-      document
-        .getElementById("info-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const gender = document.getElementById("Gender").value;
-          const age = document.getElementById("age").value;
-          const weight = document.getElementById("weight").value;
-          const height = document.getElementById("length").value;
-          const goal = document.getElementById("goal").value;
-          const workouts = document.getElementById("workouts").value;
-
-          let x =
-            Number(age) + Number(weight) + Number(height) + workouts * 10;
-
-          document.getElementById("result").innerHTML = `
-          Gender:${gender} <br>
-           Age:${age} <br>
-          Weight: ${weight} kg <br>
-           Height: ${height} cm <br>
-           Goal: ${goal === "lose" ? "Lose weight" : "Gain muscle"} <br>
-         Workouts per week: ${workouts} </br>
-         Total daily calories: ${x * 8}
-        `;
-        });
-    </script> -->
+     <script src="calculator.js"></script>
     </h4>
     <footer>
       <div class="footer-content">
