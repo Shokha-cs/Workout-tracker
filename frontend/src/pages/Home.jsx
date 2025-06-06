@@ -1,29 +1,24 @@
 import React from "react";
-import "../App.css";
+import { Link } from "react-router-dom";
+import headerVideo from "../assets/header_video.mp4";
+
 
 function Home() {
   return (
     <>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/calculator">Calculator</a>
-        <a href="/about">About us</a>
-        <a href="/suggestion">Suggestions</a>
-      </nav>
-
       <section id="header_home">
         <video autoPlay muted loop playsInline id="bg-video">
-          <source src="/videos/header video.mp4" type="video/mp4" />
+          <source src={headerVideo} type="video/mp4" />
         </video>
         <h1>MOMENTUM</h1>
         <h3>Get your free diet plan & workout plan</h3>
         <div id="buttons">
-          <a className="primair" href="/about">
+          <Link className="primair" to="/about">
             About Us
-          </a>
-          <a className="secundair" href="/calculator">
+          </Link>
+          <Link className="secundair" to="/calculator">
             Go to Calculator
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -68,23 +63,6 @@ function Home() {
           </blockquote>
         </section>
       </section>
-
-      <footer>
-        <div className="footer-content">
-          <img
-            src="/images/favicon.jpg"
-            alt="Momentum logo"
-            className="footer-logo"
-          />
-          <nav className="footer-nav">
-            <a href="/">Home</a>
-            <a href="/calculator">Calculator</a>
-            <a href="/about">About Us</a>
-            <a href="/suggestion">Suggestions</a>
-          </nav>
-        </div>
-        <p>&copy; 2025 Momentum. All rights reserved.</p>
-      </footer>
     </>
   );
 }

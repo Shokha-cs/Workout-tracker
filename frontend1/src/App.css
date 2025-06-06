@@ -1,0 +1,471 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --link-color: red;
+  --nav-bg: black;
+  --footer-bg: #f1f1f1;
+  --button-primary: #e53935;
+  --button-primary-hover: #c62828;
+  --button-secondary-bg: #000;
+  --button-secondary-hover: #1a1a1a;
+  --shadow-primary: 0 4px 12px #e53935;
+  --shadow-secondary: 0 4px 12px black;
+}
+
+.darkmode {
+  --bg-color: #111;
+  --text-color: white;
+  --link-color: #ff4747;
+  --nav-bg: #000;
+  --footer-bg: #222;
+}
+
+#theme-switch {
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 3px;
+  right: 20px;
+}
+
+#theme-switch svg {
+  fill: var(--button-primary);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Typography styles, same for every page */
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 34px;
+}
+
+h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 26px;
+}
+
+h4 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav a:hover {
+  color: red;
+}
+
+a.primair,
+a.secundair {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.primair {
+  background-color: #e53935;
+  color: white;
+}
+
+a.primair:hover {
+  background-color: #c62828;
+  box-shadow: 0 4px 12px #e53935;
+}
+
+a.secundair {
+  background-color: #000000;
+  color: white;
+  border: 2px solid #333;
+}
+
+a.secundair:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px black;
+}
+
+footer {
+  padding: 10px 15px;
+  text-align: center;
+  margin-top: 20px;
+  margin: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+/* Header Section with Glassmorphism */
+#header_home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  animation: fadeInScale 1.2s ease-in-out;
+}
+
+#header_home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(50%) saturate(130%) blur(1px);
+  transition: transform 8s ease;
+}
+
+#header_home:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay Panel Inside Header */
+.overlay {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.1);
+}
+
+/* Header Text */
+#header_home h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+#header_home h1 .highlight {
+  color: #ff1e1e;
+  text-shadow: 0 0 15px #ff1e1e;
+}
+
+#header_home h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Interactive Button Container */
+#buttons {
+  z-index: 2;
+  margin-top: 1rem;
+}
+
+#buttons button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+#buttons button:hover {
+  background-color: #ff1e1e;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff1e1e, 0 0 20px #ff1e1e;
+}
+
+/* Box Content Section */
+#box1 {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease;
+}
+
+#box1 h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #ff4747;
+  position: relative;
+}
+
+#box1 h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, #ff4747, #ff0000);
+  border-radius: 2px;
+}
+
+/* Highlight first line */
+#box1 p::first-line {
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Blockquote */
+blockquote {
+  margin: 3rem auto;
+  padding: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  color: #f2f2f2;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #ff1e1e;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+}
+
+blockquote::before,
+blockquote::after {
+  font-size: 4rem;
+  color: #ff1e1e;
+  font-family: Georgia, serif;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+
+blockquote::after {
+  content: "”";
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  from {
+    text-shadow: 0 0 10px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 25px #ff0000, 0 0 45px #ff4d4d;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.promo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+.promo-text {
+  flex: 1;
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+.promo-text h2 {
+  color: #ff4747;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(50%) saturate(130%) blur(1px);
+  transition: transform 8s ease;
+}
+
+#header_home:hover #bg-video {
+  transform: scale(1.1);
+}
