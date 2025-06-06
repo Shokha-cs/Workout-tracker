@@ -27,8 +27,7 @@ function Home() {
         <p>
           Welcome to <strong>Momentum</strong> — your all-in-one destination for
           fitness, nutrition, and motivation!
-        </p>
-        <p>
+          <br />
           Our mission is simple: to help you build a healthier, stronger, and
           more confident version of yourself. Whether you're just starting your
           fitness journey or looking to level up your current routine, we’ve got
