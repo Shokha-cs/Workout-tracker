@@ -84,11 +84,13 @@ header p {
   overflow: hidden;
 }
 
-.icon-block:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
-              0 0 60px rgba(255, 0, 0, 0.3);
+
+.icon-block:hover img {
+    transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 12px 30px rgba(200, 0, 0, 0.55);
+  border-color: #8b0000;
 }
+
 
 /* ICON IMAGE */
 .icon-block img {
@@ -101,10 +103,6 @@ header p {
   border: 3px solid #d30000;
   transition: transform 0.5s ease;
   animation: float 3s ease-in-out infinite;
-}
-
-.icon-block:hover img {
-  transform: scale(1.1) rotate(5deg);
 }
 
 @keyframes float {
