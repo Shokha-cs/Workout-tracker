@@ -258,6 +258,65 @@ input:focus {
   cursor: default;
 }
 
+
+
+.calorie-tracker {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-width: 70vw;
+  margin: auto;
+}
+
+.calorie-tracker input {
+  padding: 6px 8px;
+  margin-right: 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  width: 140px;
+  font-size: 14px;
+}
+
+.calorie-tracker button {
+  padding: 7px 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calorie-tracker button:hover {
+  background-color: #45a049;
+}
+
+.calorie-tracker ul {
+  margin-top: 15px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.calorie-tracker ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.calorie-tracker ul li button {
+  margin-left: 12px;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.calorie-tracker ul li button:hover {
+  background-color: #c0392b;
+}
+
 /* ANIMATION */
 @keyframes fadeIn {
   from {

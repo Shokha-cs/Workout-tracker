@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function Calculator() {
+  // Form data state
   const [formData, setFormData] = useState({
     Gender: "Male",
     age: "",
@@ -10,6 +11,7 @@ function Calculator() {
     workouts: "",
   });
 
+  // Results state
   const [results, setResults] = useState({
     show: false,
     bmr: null,
@@ -18,6 +20,12 @@ function Calculator() {
     workoutPlan: [],
   });
 
+  // Tracker states
+  const [food, setFood] = useState("");
+  const [calories, setCalories] = useState("");
+  const [entries, setEntries] = useState([]);
+
+  // Handle form input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -26,6 +34,7 @@ function Calculator() {
     }));
   };
 
+  // Calculate BMR, TDEE, calorie goals and workout plan
   const calculateResults = () => {
     const age = Number(formData.age);
     const weight = Number(formData.weight);
@@ -74,12 +83,48 @@ function Calculator() {
       calorieGoal: calorieGoal.toFixed(0),
       workoutPlan,
     });
+
+    // Clear tracker when recalculating goal
+    setEntries([]);
+    setFood("");
+    setCalories("");
   };
 
+  // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateResults();
   };
+
+  // Add food entry to tracker
+  const handleAddFood = () => {
+    const calorieNum = Number(calories);
+    if (!food.trim()) {
+      alert("Please enter a food name.");
+      return;
+    }
+    if (!calorieNum || calorieNum <= 0) {
+      alert("Please enter a valid calorie number.");
+      return;
+    }
+    setEntries((prev) => [
+      ...prev,
+      { food: food.trim(), calories: calorieNum },
+    ]);
+    setFood("");
+    setCalories("");
+  };
+
+  // Remove a food entry by index
+  const handleRemove = (index) => {
+    setEntries((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  // Calculate total calories consumed
+  const totalCalories = entries.reduce((acc, entry) => acc + entry.calories, 0);
+
+  // Convert calorieGoal string to number for calculation (if results.show)
+  const goalCalories = results.show ? Number(results.calorieGoal) : null;
 
   return (
     <>
@@ -91,7 +136,6 @@ function Calculator() {
           weight gain.
         </p>
       </header>
-
       <section className="form-container">
         <div className="form-card">
           <form id="info-form" onSubmit={handleSubmit}>
@@ -175,7 +219,8 @@ function Calculator() {
           </form>
         </div>
       </section>
-
+      {/* Results Section */}
+      {results.show && (
         <section
           className="results-container"
           style={{
@@ -204,6 +249,40 @@ function Calculator() {
             ))}
           </ul>
         </section>
+      )}
+      {results.show && (
+        <div className="calorie-tracker">
+          <h2>Step 2: Track Your Calories</h2>
+          <input
+            type="text"
+            placeholder="Food"
+            value={food}
+            onChange={(e) => setFood(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Calories"
+            value={calories}
+            onChange={(e) => setCalories(e.target.value)}
+          />
+          <button onClick={handleAddFood}>Add</button>
+
+          <ul>
+            {entries.map((entry, index) => (
+              <li key={index}>
+                {entry.food}: {entry.calories} kcal
+                <button onClick={() => handleRemove(index)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+
+          <h3>Total Consumed: {totalCalories} kcal</h3>
+          <h4>
+            Remaining:{" "}
+            {goalCalories !== null ? goalCalories - totalCalories : "N/A"} kcal
+          </h4>
+        </div>
+      )}
     </>
   );
 }
