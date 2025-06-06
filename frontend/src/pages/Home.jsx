@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import headerVideo from "../assets/header_video.mp4";
+import logo from "../assets/favicon.jpg"
 
 
 function Home() {
   return (
     <>
+      <video autoPlay muted loop playsInline id="bg-video">
+        <source src={headerVideo} type="video/mp4" />
+      </video>
+
       <section id="header_home">
-        <video autoPlay muted loop playsInline id="bg-video">
-          <source src={headerVideo} type="video/mp4" />
-        </video>
+        <img className="logo" src={logo} />
         <h1>MOMENTUM</h1>
         <h3>Get your free diet plan & workout plan</h3>
         <div id="buttons">
@@ -20,6 +23,8 @@ function Home() {
             Go to Calculator
           </Link>
         </div>
+
+        
       </section>
 
       <section id="box1">
