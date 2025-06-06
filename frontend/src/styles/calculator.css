@@ -267,6 +267,8 @@ input:focus {
   border-radius: 6px;
   max-width: 70vw;
   margin: auto;
+  text-align: center;
+  padding: 20px;
 }
 
 .calorie-tracker input {

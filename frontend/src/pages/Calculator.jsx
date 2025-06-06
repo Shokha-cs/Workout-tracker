@@ -242,7 +242,7 @@ function Calculator() {
             <strong>Calorie Goal:</strong>{" "}
             <span id="goal-output">{results.calorieGoal}</span> kcal/day
           </p>
-          <h3>📆 Workout Plan</h3>
+          <h3>Workout Plan</h3>
           <ul id="workout-plan-list">
             {results.workoutPlan.map((item, index) => (
               <li key={index}>{item}</li>
@@ -252,7 +252,7 @@ function Calculator() {
       )}
       {results.show && (
         <div className="calorie-tracker">
-          <h2>Step 2: Track Your Calories</h2>
+          <h2>Track Your Calories</h2>
           <input
             type="text"
             placeholder="Food"
