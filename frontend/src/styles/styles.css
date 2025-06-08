@@ -160,11 +160,9 @@ a.secundair:hover {
 
 /* FOOTER */
 footer {
-  margin: 30px 20px 0;
-  background-color: var(--footer-bg); /* black */
+  background-color: black; /* black */
   color: white; /* white text */
   text-align: center;
-  padding: 30px 20px;
   box-sizing: border-box;
   border-top: 1px solid #444;
 }
