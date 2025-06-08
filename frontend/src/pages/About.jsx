@@ -2,7 +2,7 @@ import React from "react";
 
 import storyImg from "../assets/story.jpg";
 import aboutUsImg from "../assets/aboutus.jpg";
-import rensImg from "../assets/rens1.JPG";
+import rensImg from "../assets/rens1.jpg";
 import shahriyorImg from "../assets/Shakhriyor1.jpg";
 import usmanImg from "../assets/usman1.jpg";
 import boburImg from "../assets/Phlorenci1.jpg";
