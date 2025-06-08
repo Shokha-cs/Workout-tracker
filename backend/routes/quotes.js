@@ -31,10 +31,16 @@ const quotes = [
   "Vaqt — bebaho boylik. — O‘zbek maqoli",
   "Bilim — kuch, kuch — g‘alaba. — O‘zbek maqoli",
 ];
-
 router.get("/", (req, res) => {
   const random = Math.floor(Math.random() * quotes.length);
   res.json({ quote: quotes[random] });
 });
 
+router.get("/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  if (isNaN(id) || id < 0 || id >= quotes.length) {
+    return res.status(400).json({ error: "Invalid ID" });
+  }
+  res.json({ quote: quotes[id] });
+});
 module.exports = router;
