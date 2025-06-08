@@ -435,16 +435,6 @@ blockquote::after {
 }
 
 /* ====== Header Styles ====== */
-.nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background-color: #090909;
-  position: relative;
-  z-index: 10;
-}
-
 .logo {
   height: 40px;
 }

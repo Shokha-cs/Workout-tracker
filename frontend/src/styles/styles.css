@@ -62,9 +62,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 3px;
-  right: 20px;
   cursor: pointer;
   z-index: 2000;
 }
@@ -85,18 +82,17 @@ p {
   display: block;
 }
 
-/* NAVIGATION */
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Logo left, links right */
-  align-items: center;             /* Vertically center everything */
-  background-color: var(--nav-bg); /* black */
-  color: white;
+.nav-bar {
   position: sticky;
   top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--nav-bg);
+  color: white;
   z-index: 1000;
-  padding: 15px 20px;              /* Add horizontal padding */
+  padding: 15px 20px;
   box-sizing: border-box;
 }
 
