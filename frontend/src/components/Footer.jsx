@@ -10,8 +10,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <img src={favicon} alt="Momentum logo" className="footer-logo" />
-
+        <Link to="/">
+          <img src={favicon} alt="Momentum logo" className="footer-logo" />
+        </Link>
         <nav className="footer-nav">
           <Link to="/">Home</Link>
           <Link to="/calculator">Calculator</Link>
