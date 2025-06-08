@@ -1,15 +1,13 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
+const cors = require("cors");
 
-app.use(express.static("public"));
 app.use(cors());
-app.use(express.json());
 
-app.get("/api", (req, res) => {
-  res.json({ message: "This message means backend working" });
-});
+const quoteRoutes = require("./routes/quotes");
+app.use("/api/quotes", quoteRoutes);
 
-app.listen(5000, () => {
-  console.log(`Server is running on http://localhost:5000`);
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
