@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 function Calculator() {
-  // Form data state
   const [formData, setFormData] = useState({
     Gender: "Male",
     age: "",
@@ -11,7 +10,6 @@ function Calculator() {
     workouts: "",
   });
 
-  // Results state
   const [results, setResults] = useState({
     show: false,
     bmr: null,
@@ -20,7 +18,6 @@ function Calculator() {
     workoutPlan: [],
   });
 
-  // Tracker states
   const [food, setFood] = useState("");
   const [calories, setCalories] = useState("");
   const [entries, setEntries] = useState([]);
@@ -35,8 +32,31 @@ function Calculator() {
     if (savedEntries) setEntries(savedEntries);
   }, []);
 
-  // Handle form input change
+  const handleReset = () => {
+    setFormData({
+      Gender: "Male",
+      age: "",
+      weight: "",
+      length: "",
+      goal: "lose",
+      workouts: "",
+    });
+    
+    setResults({
+      show: false
+    });
+    
+  setEntries([]);
+  setFood("");
+  setCalories("");
+  
+    localStorage.removeItem("formData");
+    localStorage.removeItem("results");
+    localStorage.removeItem("entries");
+  }
   const handleChange = (e) => {
+
+
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -44,8 +64,16 @@ function Calculator() {
     }));
   };
 
-  // Calculate BMR, TDEE, calorie goals and workout plan
   const calculateResults = () => {
+
+  const confirmResult = window.confirm(
+    "By clicking OK, you agree to save personal information for using this calculator."
+  );
+
+  if (!confirmResult) {
+    return;
+  }
+
     const age = Number(formData.age);
     const weight = Number(formData.weight);
     const height = Number(formData.length);
@@ -94,7 +122,6 @@ function Calculator() {
       workoutPlan,
     });
 
-    // Clear tracker when recalculating goal
     setEntries([]);
     setFood("");
     setCalories("");
@@ -111,13 +138,11 @@ function Calculator() {
     );
   };
 
-  // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateResults();
   };
 
-  // Add food entry to tracker
   const handleAddFood = () => {
     const calorieNum = Number(calories);
     if (!food.trim()) {
@@ -138,7 +163,6 @@ function Calculator() {
     setCalories("");
   };
 
-  // Remove a food entry by index
   const handleRemove = (index) => {
     setEntries((prev) => {
       const updated = prev.filter((_, i) => i !== index);
@@ -147,10 +171,9 @@ function Calculator() {
     });
   };
 
-  // Calculate total calories consumed
+
   const totalCalories = entries.reduce((acc, entry) => acc + entry.calories, 0);
 
-  // Convert calorieGoal string to number for calculation (if results.show)
   const goalCalories = results.show ? Number(results.calorieGoal) : null;
 
   return (
@@ -242,6 +265,9 @@ function Calculator() {
             <br />
             <button className="submit" type="submit">
               Calculate Calories
+            </button>
+            <button className="submit" type="button" onClick={handleReset}>
+              Reset All
             </button>
           </form>
         </div>
