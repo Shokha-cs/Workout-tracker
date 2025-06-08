@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import favicon from "../assets/favicon.jpg"; // logo image
+import favicon from "../assets/favicon.jpg"; // adjust path if needed
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("darkmode");
+    } else {
+      document.body.classList.remove("darkmode");
+    }
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
 
   return (
     <nav className="nav-bar">
-      <Link to="/">
       <img src={favicon} alt="Momentum logo" className="logo" />
-</Link> 
-  
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-      </div>
-
-      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/calculator" onClick={() => setMenuOpen(false)}>Calculator</Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
-        <Link to="/suggestion" onClick={() => setMenuOpen(false)}>Suggestions</Link>
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/calculator">Calculator</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/suggestion">Suggestions</Link>
+        {/* Dark Mode Toggle Button */}
+        <button onClick={() => setIsDarkMode(!isDarkMode)} className="theme-switch">
+          {isDarkMode ? "Light" : "Dark"}
+        </button>
       </div>
     </nav>
   );
