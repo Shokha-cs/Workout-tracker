@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Shokha-cs/Workout-tracker/issues"
   },
-  "homepage": "https://github.com/Shokha-cs/Workout-tracker#readme",
+  "homepage": "https://workout-tracker-t32q.onrender.com",
   "description": "",
   "devDependencies": {
     "concurrently": "^9.1.2",
