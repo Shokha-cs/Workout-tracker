@@ -292,7 +292,7 @@ function Calculator() {
             marginTop: "20px",
           }}
         >
-          <h2>🔍 Your Fitness Plan</h2>
+          <h2> Your Fitness Plan</h2>
           <p>
             <strong>BMR:</strong> <span id="bmr-output">{results.bmr}</span>{" "}
             kcal/day
