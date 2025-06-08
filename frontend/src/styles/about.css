@@ -63,7 +63,6 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 50px 40px;
   gap: 60px;
   background-color: var(--story-box-bg);
   margin: 70px auto;
@@ -72,11 +71,11 @@ p {
   box-shadow: 0 12px 30px var(--image-shadow);
   position: relative;
   z-index: 1;
+  padding: 40px;
 }
 
 .story-box {
   flex: 1 1 500px;
-  padding: 1.5rem 2rem;
   color: var(--card-text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.8;
@@ -92,8 +91,6 @@ p {
 
 .story-box p {
   text-align: justify;
-  font-size: 1.15rem;
-  font-weight: 600;
 }
 
 .Img {

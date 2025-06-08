@@ -53,7 +53,7 @@
 .darkmode #theme-switch svg:first-child { display: none; }
 .darkmode #theme-switch svg:last-child { display: block; }
 
-/* Header */
+
 #header_home {
   position: relative;
   width: 100%;
@@ -95,13 +95,11 @@
   animation: fadeInUp 1s ease-in-out;
 }
 
-/* Box Content */
 #box1 {
   max-width: 900px;
   margin: 60px auto;
   padding: 3rem;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   text-align: center;

@@ -28,13 +28,16 @@ function About() {
             fine-tuning your performance, our calculator was built to give you
             the insights you need to succeed.
             <br />
+            <br />
             No gimmicks, no fluff—just science-backed guidance tailored to you.
             From macros and calories to workouts that match your goals, we’ve
             combined accuracy with simplicity to help you take control of your
             health, one step at a time.
             <br />
+            <br />
             This is more than just a calculator—it’s your personalized plan,
             your daily guide, and your partner in progress.
+            <br />
             <br />
             Let’s build something stronger, together.
           </p>
