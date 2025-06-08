@@ -1,6 +1,7 @@
 {
-  "homepage": "https://shokha-cs.github.io/Workout-tracker",
+  "homepage": "https://workout-tracker-t32q.onrender.com",
   "name": "frontend2",
+  "proxy": "http://localhost:5000",
   "private": true,
   "version": "0.0.0",
   "type": "module",
