@@ -1,25 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import favicon from "../assets/favicon.jpg"; // adjust path if needed
 
 function Header() {
   return (
-    <section id="header_home">
-      <img
-        src="/images/homepage.jpg"
-        alt="Fitness lifestyle"
-        className="header-image"
-      />
-      <h1>MOMENTUM</h1>
-      <h3>Get your free diet plan & workout plan</h3>
-      <div className="buttons">
-        <Link className="primary-btn" to="/about">
-          About us
-        </Link>
-        <Link className="secondary-btn" to="/calculator">
-          Calculator
-        </Link>
+    <nav className="nav-bar">
+      <img src={favicon} alt="Momentum logo" className="logo" />
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/calculator">Calculator</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/suggestion">Suggestions</Link>
       </div>
-    </section>
+    </nav>
   );
 }
 

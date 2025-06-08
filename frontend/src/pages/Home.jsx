@@ -1,30 +1,30 @@
 import React from "react";
-import "../App.css";
+import { Link } from "react-router-dom";
+import headerVideo from "../assets/header_video.mp4";
+import logo from "../assets/favicon.jpg"
+
 
 function Home() {
   return (
     <>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/calculator">Calculator</a>
-        <a href="/about">About us</a>
-        <a href="/suggestion">Suggestions</a>
-      </nav>
+      <video autoPlay muted loop playsInline id="bg-video">
+        <source src={headerVideo} type="video/mp4" />
+      </video>
 
       <section id="header_home">
-        <video autoPlay muted loop playsInline id="bg-video">
-          <source src="/videos/header video.mp4" type="video/mp4" />
-        </video>
+        <img className="logo" src={logo} />
         <h1>MOMENTUM</h1>
         <h3>Get your free diet plan & workout plan</h3>
         <div id="buttons">
-          <a className="primair" href="/about">
+          <Link className="primair" to="/about">
             About Us
-          </a>
-          <a className="secundair" href="/calculator">
+          </Link>
+          <Link className="secundair" to="/calculator">
             Go to Calculator
-          </a>
+          </Link>
         </div>
+
+        
       </section>
 
       <section id="box1">
@@ -32,8 +32,7 @@ function Home() {
         <p>
           Welcome to <strong>Momentum</strong> — your all-in-one destination for
           fitness, nutrition, and motivation!
-        </p>
-        <p>
+          <br />
           Our mission is simple: to help you build a healthier, stronger, and
           more confident version of yourself. Whether you're just starting your
           fitness journey or looking to level up your current routine, we’ve got
@@ -68,23 +67,6 @@ function Home() {
           </blockquote>
         </section>
       </section>
-
-      <footer>
-        <div className="footer-content">
-          <img
-            src="/images/favicon.jpg"
-            alt="Momentum logo"
-            className="footer-logo"
-          />
-          <nav className="footer-nav">
-            <a href="/">Home</a>
-            <a href="/calculator">Calculator</a>
-            <a href="/about">About Us</a>
-            <a href="/suggestion">Suggestions</a>
-          </nav>
-        </div>
-        <p>&copy; 2025 Momentum. All rights reserved.</p>
-      </footer>
     </>
   );
 }
