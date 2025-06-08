@@ -33,6 +33,15 @@ function Calculator() {
   }, []);
 
   const handleReset = () => {
+
+    const confirmReset = window.confirm(
+      "By clicking OK, you agree to reset all the info you submitted"
+    );
+
+    if (!confirmReset) {
+      return;
+    }
+
     setFormData({
       Gender: "Male",
       age: "",
@@ -53,6 +62,7 @@ function Calculator() {
     localStorage.removeItem("formData");
     localStorage.removeItem("results");
     localStorage.removeItem("entries");
+
   }
   const handleChange = (e) => {
 

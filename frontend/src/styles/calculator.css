@@ -162,7 +162,7 @@ input:focus {
 
 .submit:hover {
   background-color: #d30000;
-  color: ;
+  color: black;
   transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
 }
