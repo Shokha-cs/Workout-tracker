@@ -2,9 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import headerVideo from "../assets/header_video.mp4";
 import logo from "../assets/favicon.jpg"
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Home() {
+
+  const [quote, setQuote] = useState("");
+
+useEffect(() => {
+  axios
+    .get("http://localhost:5000/api/quotes")
+    .then((res) => setQuote(res.data.quote))
+    .catch((err) => console.error("Failed to fetch quote", err));
+}, []);
+
   return (
     <>
       <video autoPlay muted loop playsInline id="bg-video">
@@ -23,8 +34,6 @@ function Home() {
             Go to Calculator
           </Link>
         </div>
-
-        
       </section>
 
       <section id="box1">
@@ -60,11 +69,7 @@ function Home() {
         </p>
 
         <section id="quote_section">
-          <blockquote>
-            The last three or four reps is what makes the muscle grow. This area
-            of pain divides a champion from someone who is not a champion.
-            <br />— Arnold Schwarzenegger
-          </blockquote>
+          <blockquote>{quote}</blockquote>
         </section>
       </section>
     </>
