@@ -24,7 +24,7 @@ const quotes = [
   "Wie niet waagt, die niet wint. — Nederlands gezegde",
   "Geen woorden maar daden. — Rotterdams gezegde",
   "Oefening baart kunst. — Nederlands gezegde",
-  "Een gezonde geest in een gezond lichaam. — Juvenalis (Latijns, maar veelgebruikt in NL)",
+  "Een gezonde geest in een gezond lichaam. — Juvenalis (Latijns)",
   "Harakatda baraka. — O‘zbek maqoli",
   "Sog‘liq — eng katta boylik. — O‘zbek maqoli",
   "Mehnat qilgan odam hech qachon yomon yashamaydi. — O‘zbek maqoli",
