@@ -9,12 +9,12 @@ function Home() {
 
   const [quote, setQuote] = useState("");
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/quotes")
-      .then((res) => setQuote(res.data.quote))
-      .catch((err) => console.error("Failed to fetch quote", err));
-  }, []);
+useEffect(() => {
+  axios
+    .get("http://localhost:5000/api/quotes")
+    .then((res) => setQuote(res.data.quote))
+    .catch((err) => console.error("Failed to fetch quote", err));
+}, []);
 
   return (
     <>

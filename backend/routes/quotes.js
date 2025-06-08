@@ -35,7 +35,6 @@ const quotes = [
 router.get("/", (req, res) => {
   const random = Math.floor(Math.random() * quotes.length);
   res.json({ quote: quotes[random] });
-  console.log(`It is working this is the quote: ${quotes[random]}`);
 });
 
 module.exports = router;

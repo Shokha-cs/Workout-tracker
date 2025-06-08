@@ -24,11 +24,7 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
-<<<<<<< HEAD
-    "gh-pages": "^6.3.0",
-=======
     "cors": "^2.8.5",
->>>>>>> e94c62868e80c47f3365ff501e94de54246950d5
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"
