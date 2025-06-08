@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 const quoteRoutes = require("./routes/quotes");
 app.use("/api/quotes", quoteRoutes);
 
-const PORT = 5000;
+const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
