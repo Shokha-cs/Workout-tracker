@@ -1,10 +1,16 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
 
-app.use(cors());
+const app = express();
+app.use(cors({ origin: "http://localhost:5173" }));
 
-const quoteRoutes = require("./routes/quotes");
+
+app.use((req, res, next) => {
+  console.log("Request received:", req.method, req.url);
+  next();
+});
+
+const quoteRoutes = require("./routes/quotes"); 
 app.use("/api/quotes", quoteRoutes);
 
 const PORT = 5000;
