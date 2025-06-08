@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Calculator() {
   // Form data state
@@ -24,6 +24,16 @@ function Calculator() {
   const [food, setFood] = useState("");
   const [calories, setCalories] = useState("");
   const [entries, setEntries] = useState([]);
+
+  useEffect(() => {
+    const savedForm = JSON.parse(localStorage.getItem("formData"));
+    const savedResults = JSON.parse(localStorage.getItem("results"));
+    const savedEntries = JSON.parse(localStorage.getItem("entries"));
+
+    if (savedForm) setFormData(savedForm);
+    if (savedResults) setResults(savedResults);
+    if (savedEntries) setEntries(savedEntries);
+  }, []);
 
   // Handle form input change
   const handleChange = (e) => {
@@ -88,6 +98,17 @@ function Calculator() {
     setEntries([]);
     setFood("");
     setCalories("");
+    localStorage.setItem("formData", JSON.stringify(formData));
+    localStorage.setItem(
+      "results",
+      JSON.stringify({
+        show: true,
+        bmr: bmr.toFixed(0),
+        tdee: tdee.toFixed(0),
+        calorieGoal: calorieGoal.toFixed(0),
+        workoutPlan,
+      })
+    );
   };
 
   // Form submit handler
@@ -107,17 +128,23 @@ function Calculator() {
       alert("Please enter a valid calorie number.");
       return;
     }
-    setEntries((prev) => [
-      ...prev,
-      { food: food.trim(), calories: calorieNum },
-    ]);
+    setEntries((prev) => {
+      const updated = [...prev, { food: food.trim(), calories: calorieNum }];
+      localStorage.setItem("entries", JSON.stringify(updated));
+      return updated;
+    });
+
     setFood("");
     setCalories("");
   };
 
   // Remove a food entry by index
   const handleRemove = (index) => {
-    setEntries((prev) => prev.filter((_, i) => i !== index));
+    setEntries((prev) => {
+      const updated = prev.filter((_, i) => i !== index);
+      localStorage.setItem("entries", JSON.stringify(updated));
+      return updated;
+    });
   };
 
   // Calculate total calories consumed
