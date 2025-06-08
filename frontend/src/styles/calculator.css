@@ -4,12 +4,10 @@
   --link-color: red;
   --nav-bg: black;
   --footer-bg: #222;
-  --button-primary: #e53935;
-  --button-primary-hover: #c62828;
-  --button-secondary-bg: #000;
-  --button-secondary-hover: #1a1a1a;
+  --btn-primary: #e53935;
+  --btn-primary-hover: #c62828;
+  --btn-secondary-bg: #000;
   --shadow-primary: 0 4px 12px #e53935;
-  --shadow-secondary: 0 4px 12px black;
 }
 
 .darkmode {
@@ -23,12 +21,14 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--text-color);
+  text-align: center;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 0.5em 0;
 }
 
 h1 { font-size: 48px; }
@@ -36,40 +36,14 @@ h2 { font-size: 34px; }
 h3 { font-size: 26px; }
 
 p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
   color: var(--text-color);
+  margin: 0 0 1em;
 }
-
-#theme-switch {
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  border-radius: 50%;
-  background-color: var(--button-secondary-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 3px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 2000;
-}
-
-#theme-switch svg {
-  fill: var(--button-primary);
-}
-
-#theme-switch svg:last-child { display: none; }
-.darkmode #theme-switch svg:first-child { display: none; }
-.darkmode #theme-switch svg:last-child { display: block; }
-
 
 header {
   background: linear-gradient(135deg, #d30000, #c91313);
   padding: 3rem 1rem;
-  text-align: center;
   color: white;
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
   position: relative;
@@ -79,129 +53,97 @@ header {
 header::after {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.05) 20%, transparent 70%);
-  animation: pulse 5s infinite linear;
+  animation: pulse 5s linear infinite;
   z-index: 0;
 }
 
 @keyframes pulse {
-  0% { transform: rotate(0deg) scale(1); }
+  0% { transform: rotate(0) scale(1); }
   50% { transform: rotate(180deg) scale(1.05); }
   100% { transform: rotate(360deg) scale(1); }
-}
-
-header h1, header h2 {
-  position: relative;
-  z-index: 1;
 }
 
 .form-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  gap: 2rem;
   padding: 3rem 2rem;
-  background-image: url("../images/GYM.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("../images/GYM.jpg") center/cover no-repeat;
   backdrop-filter: blur(6px);
-  animation: bgShift 30s infinite linear;
-  width: 70vw;
+  width: 50vw;
   margin: auto;
+  animation: bgShift 30s linear infinite;
 }
 
 @keyframes bgShift {
-  0% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.form-container p {
-  text-align: center;
-  font-size: 1.3rem;
-  color: #ffffff;
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
 }
 
 .form-card {
-  background-color: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  animation: fadeInScale 1s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 label {
-  font-size: 1.2rem;
-  color: #f1f1f1;
-  margin-bottom: 0.5rem;
   display: block;
+  margin-bottom: 0.5rem;
+  color: #f1f1f1;
+  font-size: 1.2rem;
 }
 
-select, input {
+input, select {
   width: 100%;
   padding: 0.8rem;
   border-radius: 12px;
   border: 1px solid #555;
-  background-color: #111;
+  background: #111;
   color: #fff;
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
-select:hover, input:focus {
-  border-color: #ff4d4d;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+input:focus, select:hover {
+  border-color: var(--btn-primary);
+  box-shadow: 0 0 10px rgba(229, 57, 53, 0.6);
+  outline: none;
 }
 
 .submit {
-  background: linear-gradient(45deg, #ffffff, #dddddd);
+  background: linear-gradient(45deg, #fff, #ddd);
   color: #111;
-  padding: 0.9rem 1.6rem;
+  margin: 0 30px;
+  padding: 15px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.4rem;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(255,255,255,0.15);
 }
 
 .submit:hover {
-  background-color: #d30000;
+  background-color: var(--btn-primary);
   color: black;
   transform: scale(1.08);
-  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+  box-shadow: var(--shadow-primary);
 }
-
-#result {
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1.25rem;
-  padding-top: 1.2rem;
-  color: #fff;
-  animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInScale { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
 
 .results-container {
-  background-color: #ffffff;
+  background: (--bg-color);
   border-radius: 16px;
   padding: 40px 30px;
   margin: 40px auto;
   max-width: 640px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.6s ease-in-out;
-  color: #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .results-container h2 {
@@ -215,8 +157,7 @@ select:hover, input:focus {
 .results-container h3 {
   font-size: 22px;
   color: #c62828;
-  margin-top: 30px;
-  margin-bottom: 12px;
+  margin: 30px 0 12px;
 }
 
 .results-container p {
@@ -230,103 +171,92 @@ select:hover, input:focus {
 }
 
 .results-container li {
-  background-color: #f1f3f5;
+  background: #222;
   border-radius: 10px;
   padding: 12px 16px;
   margin-bottom: 10px;
+  color: #fff;
   transition: background-color 0.2s ease;
 }
 
 .results-container li:hover {
-  background-color: #e0e4e7;
-  cursor: default;
+  background: #333;
 }
 
+
 .calorie-tracker {
-  margin-top: 30px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   max-width: 70vw;
+  margin: 30px auto 0;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: (--bg-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  color: (  --text-color);
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .calorie-tracker input {
-  padding: 6px 8px;
-  margin-right: 10px;
-  border: 1px solid #bbb;
-  border-radius: 4px;
+  padding: 8px 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background: #111;
+  color: #fff;
   width: 140px;
+  font-size: 1rem;
 }
 
 .calorie-tracker button {
-  padding: 7px 14px;
-  background-color: #4caf50;
-  color: white;
+  padding: 8px 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
+  background: #4caf50;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .calorie-tracker button:hover {
-  background-color: #45a049;
+  background: #45a049;
 }
 
 .calorie-tracker ul {
-  margin-top: 15px;
-  padding-left: 0;
   list-style: none;
+  padding: 0;
+  margin-top: 15px;
 }
 
-.calorie-tracker ul li {
+.calorie-tracker li {
   margin-bottom: 8px;
   font-size: 14px;
 }
 
-.calorie-tracker ul li button {
+.calorie-tracker li button {
   margin-left: 12px;
-  background-color: #e74c3c;
+  background: #e74c3c;
   border: none;
   color: white;
   padding: 3px 8px;
   border-radius: 3px;
   cursor: pointer;
   font-size: 12px;
+  transition: background-color 0.3s ease;
 }
 
-.calorie-tracker ul li button:hover {
-  background-color: #c0392b;
+.calorie-tracker li button:hover {
+  background: #c0392b;
 }
 
-@media screen and (max-width: 600px) {
-  .results-container {
-    padding: 25px 20px;
-    margin: 25px 15px;
+@media (max-width: 600px) {
+  .results-container, .form-container, .calorie-tracker {
+    max-width: 90vw;
+    padding: 20px;
+    margin: 20px auto;
   }
-
+  
   .results-container h2 { font-size: 22px; }
   .results-container h3 { font-size: 18px; }
-  .results-container p,
-  .results-container li { font-size: 15px; }
-}
-
-.theme-switch {
-  background-color: var(--button-secondary-bg);
-  color: var(--button-primary);
-  border: 2px solid var(--button-primary);
-  border-radius: 25px;
-  padding: 8px 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.theme-switch:hover {
-  background-color: var(--button-primary-hover);
-  color: white;
-  transform: scale(1.05);
-  box-shadow: var(--shadow-primary);
+  .results-container p, .results-container li { font-size: 15px; }
 }

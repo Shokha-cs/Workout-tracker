@@ -58,39 +58,6 @@ p {
   color: var(--text-color);
 }
 
-/* THEME SWITCH BUTTON */
-#theme-switch {
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  border-radius: 50%;
-  background-color: var(--button-secondary-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 3px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 2000;
-}
-
-#theme-switch svg {
-  fill: var(--button-primary);
-}
-
-#theme-switch svg:last-child {
-  display: none;
-}
-
-.darkmode #theme-switch svg:first-child {
-  display: none;
-}
-
-.darkmode #theme-switch svg:last-child {
-  display: block;
-}
-/* --- ABOUT PAGE STYLES --- */
 .container_about_page {
   display: flex;
   flex-wrap: wrap;

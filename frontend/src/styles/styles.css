@@ -52,18 +52,34 @@ p {
   color: var(--text-color);
 }
 
-/* THEME SWITCH BUTTON */
-#theme-switch {
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  border-radius: 50%;
+.theme-switch {
   background-color: var(--button-secondary-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: var(--button-primary);
+  border: 2px solid var(--button-primary);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  z-index: 2000;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.theme-switch:hover{
+  background-color: var(--button-primary);
+  color: var(--button-secondary-bg);
+  box-shadow: var(--shadow-primary);
+  transform: scale(1.05);
+}
+
+.theme-switch:active {
+  transform: scale(0.95);
+  box-shadow: none;
 }
 
 #theme-switch svg {
@@ -162,11 +178,13 @@ a.secundair:hover {
 
 
 footer {
-  background-color: black; /* black */
-  color: white; /* white text */
+  background-color: black; 
+  color: white;
   text-align: center;
   box-sizing: border-box;
   border-top: 1px solid #444;
+  padding: 20px;
+  margin: 50px 0 0 0;
 }
 
 .footer-content {
