@@ -7,8 +7,10 @@ function Header() {
 
   return (
     <nav className="nav-bar">
+      <Link to="/">
       <img src={favicon} alt="Momentum logo" className="logo" />
-
+</Link> 
+  
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>

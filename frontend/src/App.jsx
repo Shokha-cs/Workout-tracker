@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RoutesList from "./routes";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Header />
@@ -14,5 +14,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

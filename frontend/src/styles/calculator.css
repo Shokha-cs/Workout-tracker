@@ -1,5 +1,3 @@
-/* Creative Header */
-
 header {
   background: linear-gradient(135deg, #d30000, #c91313);
   padding: 3rem 1rem;
@@ -40,7 +38,6 @@ header h1, header h2 {
   z-index: 1;
 }
 
-/* Section Titles */
 h3 {
   text-align: center;
   font-size: 2.2rem;
@@ -52,7 +49,7 @@ h3 {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Animated Background Section */
+
 .form-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -74,7 +71,7 @@ h3 {
   100% { background-position: 0% 50%; }
 }
 
-/* Intro Paragraphs */
+
 .form-container p {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Grande", Geneva, Verdana, sans-serif;
@@ -82,10 +79,9 @@ h3 {
   color: #ffffff;
   margin-bottom: 2rem;
   animation: fadeInUp 1s ease forwards;
-  opacity: 0;
 }
 
-/* Stylish Cards */
+
 .form-card {
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 20px;
@@ -96,7 +92,6 @@ h3 {
   transition: transform 0.5s ease, box-shadow 0.4s ease;
   border: 1px solid rgba(255, 255, 255, 0.15);
   animation: fadeInScale 1s ease-in-out;
-  
 }
 
 /* .form-card:hover {
@@ -150,11 +145,11 @@ input:focus {
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
-/* Creative Button */
 .submit {
   background: linear-gradient(45deg, #ffffff, #dddddd);
   color: #111;
-  padding: 0.9rem 1.6rem;
+  padding: 15px;
+  margin: 0px 10px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -167,12 +162,11 @@ input:focus {
 
 .submit:hover {
   background-color: #d30000;
-  color: white;
+  color: black;
   transform: scale(1.08);
   box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
 }
 
-/* Result Output */
 #result {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
