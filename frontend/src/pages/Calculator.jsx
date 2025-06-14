@@ -276,7 +276,7 @@ function Calculator() {
             <button className="submit" type="submit">
               Calculate Calories
             </button>
-            <button className="submit" type="button" onClick={handleReset}>
+            <button className="submit reset" type="button" onClick={handleReset}>
               Reset All
             </button>
           </form>
